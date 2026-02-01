@@ -109,7 +109,7 @@ class OnCompleteScreen extends StatelessWidget {
 
                       // 미션 카드 2개 (더미)
                       const _MissionCard(
-                        iconAsset: 'heart.svg',
+                        icon: Icons.favorite_rounded,
                         iconSize: 32,
                         title: '신체 컨디션 체크',
                         tagText: '건강',
@@ -117,7 +117,7 @@ class OnCompleteScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 12),
                       const _MissionCard(
-                        iconAsset: 'graph.svg',
+                        icon: Icons.check_circle_rounded,
                         iconSize: 32,
                         title: ' 체중 유지 체크',
                         tagText: '관리',
@@ -282,14 +282,14 @@ class _TodayMissionHeader extends StatelessWidget {
 
 class _MissionCard extends StatelessWidget {
   const _MissionCard({
-    required this.iconAsset,
+    required this.icon,
     required this.iconSize,
     required this.title,
     required this.tagText,
     required this.desc,
   });
 
-  final String iconAsset; // svg 경로
+  final IconData icon; // svg 경로
   final double iconSize; // 아이콘 크기
   final String title;
   final String tagText;
@@ -310,11 +310,10 @@ class _MissionCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(
-            iconAsset,
-            width: iconSize,
-            height: iconSize,
-            fit: BoxFit.contain,
+          Icon(
+            icon,
+            size: iconSize,
+            color: const Color(0xFF111827),
           ),
           const SizedBox(width: 12),
           Expanded(
