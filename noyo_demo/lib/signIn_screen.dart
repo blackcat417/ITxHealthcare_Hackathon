@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'user_info_screen.dart';
+import 'package:noyo_demo/on1.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -93,8 +92,7 @@ class SignInScreen extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (_) => const UserInfoScreen()),
+                          MaterialPageRoute(builder: (_) => const On1Screen()),
                         );
                       },
                       child: const Text(
